@@ -1,0 +1,64 @@
+group 'biblioteca-recanto'
+version '1.0-SNAPSHOT'
+
+/* buildScript e uma task necessaria para o funcionamento do spring */
+buildscript {
+
+    repositories{
+        mavenCentral()
+    }
+
+    dependencies{
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE");
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar{
+    baseName="biblioteca-recanto"
+    version="0.1.0"
+}
+
+repositories{
+    mavenCentral()
+}
+
+sourceCompatibility=1.8
+targetCompatibility=1.8
+
+dependencies{
+    compile("org.springframework.boot:spring-boot-starter-web"){
+        exclude module: "spring-boot-starter-tomcat"
+    }
+
+    compile("org.springframework.boot:spring-boot-starter-jetty")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+
+    compile('org.webjars:jquery:2.1.3')
+
+    testCompile("junit:junit")
+}
+
+task wrapper(type:Wrapper ){
+    gradleVersion="2.4"
+}
+
+
+task stage(type: Copy, dependsOn: [clean, build]){
+    from jar.archivePath
+    into project.rootDir
+    rename{
+        'biblioteca-recanto.jar'
+    }
+}
+
+stage.mustRunAfter(clean)
+
+clean << {
+    project.file('biblioteca-recanto.jar').delete()
+}

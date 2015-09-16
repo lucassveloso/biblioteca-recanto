@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta th:replace="fragments/assets :: meta-tag" />
+    <script th:replace="fragments/assets :: jquery"/>
+    <script type="text/javascript" src="js/hi.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/hi.css" />
+
+</head>
+
+<body>
+    <h1 th:include="fragments/titulos::titulo-pagina-hi" />
+    <p th:text=" 'Hi, ' + ${name} + '!' " />
+</body>
+</html>
