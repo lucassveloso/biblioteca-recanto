@@ -55,13 +55,13 @@ task stage(type: Copy, dependsOn: [clean, build]){
     from jar.archivePath
     into project.rootDir
     rename{
-        'inimigos-a-mesa.jar'
+        'biblioteca-recanto.jar'
     }
 }
 
 stage.mustRunAfter(clean)
 
 clean << {
-    project.file('inimigos-a-mesa.jar').delete()
+    project.file('iblioteca-recanto.jar').delete()
 }
 
