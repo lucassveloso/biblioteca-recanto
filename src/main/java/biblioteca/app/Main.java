@@ -11,7 +11,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = {"biblioteca"})
 @EnableJpaRepositories(basePackages = {"biblioteca"})
 @EntityScan(basePackages = {"biblioteca"})
-
 public class Main {
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
