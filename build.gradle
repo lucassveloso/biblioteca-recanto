@@ -62,6 +62,6 @@ task stage(type: Copy, dependsOn: [clean, build]){
 stage.mustRunAfter(clean)
 
 clean << {
-    project.file('iblioteca-recanto.jar').delete()
+    project.file('blioteca-recanto.jar').delete()
 }
 
