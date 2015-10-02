@@ -9,8 +9,9 @@ import java.io.Serializable;
 public class Obra implements Comparable<Obra>,Serializable {
 
     @Id
-    @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "geradorId", sequenceName = "obra_codigo_seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "geradorId")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "obra_sequence_generator")
+    @SequenceGenerator(name = "obra_sequence_generator", sequenceName = "obra_sequence_cod", allocationSize = 1)
+    @Column(name = "codigo", nullable = false)
     private int codigo;
     private String titulo;
     @JoinColumn(name = "cod_categoria", referencedColumnName = "codigo")

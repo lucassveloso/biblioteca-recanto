@@ -7,9 +7,9 @@ import java.util.List;
 public class Editora {
 
     @Id
-    @SequenceGenerator(initialValue = 1, allocationSize = 1, name = "geradorId", sequenceName = "editora_codigo_seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "geradorId")
-
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "editora_sequence_generator")
+    @SequenceGenerator(name = "editora_sequence_generator", sequenceName = "editora_sequence_cod", allocationSize = 1)
+    @Column(name = "codigo", nullable = false)
     private int codigo;
     private String nome;
 
