@@ -6,9 +6,10 @@ package biblioteca.dao;
         import org.springframework.data.domain.Pageable;
         import org.springframework.data.jpa.repository.JpaRepository;
         import org.springframework.data.jpa.repository.Query;
+        import org.springframework.data.repository.CrudRepository;
         import org.springframework.data.repository.query.Param;
 
-public interface ObraRepository extends JpaRepository<Obra, Integer> {
+public interface ObraRepository extends CrudRepository<Obra, Integer> {
 
     @Query(Consultas.Obra.FIND_BY_NOME)
     Page<Obra> findByNome(@Param("titulo") String titulo, Pageable paginacao);
