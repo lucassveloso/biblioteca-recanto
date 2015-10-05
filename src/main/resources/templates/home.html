@@ -7,28 +7,34 @@
 
     <link th:replace="fragmentos/header :: bootstrap-css" />
     <link th:replace="fragmentos/header :: jqueryui-css" />
-    <link th:replace="fragmentos/header :: principal-css" />
-    <link th:replace="fragmentos/header :: favicon-ico"/>
-    <link th:replace="fragmentos/header :: busca-icon" />
-    <link th:replace="fragmentos/header :: busca-css"/>
     <script th:replace="fragmentos/header :: jquery"/>
     <script th:replace="fragmentos/header :: jqueryui"/>
     <script th:replace="fragmentos/header :: bootstrap-js"/>
     <script th:replace="fragmentos/header :: query-string-js"/>
-    <script th:replace="fragmentos/header :: busca"/>
-    <script type="text/javascript" src="/js/home.js"/>
+
+        <link rel="stylesheet" type="text/css" href="css/principal.css"/>
 
 </head>
 <body>
 
-<nav th:replace="fragmentos/header :: cabecalho"></nav>
-<br/>
-<br/>
-<br/>
-<br/><br/><br/>
 
-    <p> Biblioteca Recanto da Lagoa </p>
-    <p th:text="${obras}"/>
+<div class="quadro">
+    <div class="header-quadro"></div>
+    <div class="centro-quadro">
+        <div class="categoria">
+            <div class="header-categoria"></div>
+            <div class="centro-categoria"></div>
+            <div class="footer-categoria"></div>
+        </div>
+        <div class="prateleiras">
+            <div class="prateleira"></div>
+            <div class="prateleira"></div>
+            <div class="prateleira"></div>
+        </div>
+
+    </div>
+    <div class="footer-quadro"></div>
+</div>
 
 </body>
 </html>
