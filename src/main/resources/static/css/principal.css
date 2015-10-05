@@ -1,3 +1,12 @@
+@font-face {
+	font-family: 'SourceSansPro';
+	src: url(/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf);
+}
+
+* {
+	font-family: 'SourceSansPro';
+}
+
 body{
 background-image: url('../img/fundo.png');
 }
@@ -24,7 +33,7 @@ background-image: url('../img/fundo.png');
    background-image: url('../img/footer_quadro.png');
 }
 
-.categoria{
+.campo-categorias{
    float: left;
    width:300px;
    margin-left:20px;
@@ -69,15 +78,10 @@ background-image: url('../img/fundo.png');
 }
 
 .obra-titulo{
-   height: 49px;
-   vertical-align: top;
-   font-weight: bold;
-   font-size: 1.2em;
-   line-height: 1em;
    color: #CCB1AA;
-   text-shadow: 1px 1px 1px #000;
-   text-overflow: ellipsis;
-   overflow: hidden;
+   line-height: 1em;
+   height: 49px;
+   font-size: 1.2em;
 }
 
 .obra-imagem{
@@ -122,4 +126,29 @@ background-image: url('../img/fundo.png');
    border: none;
    padding-top: 12px;
    margin-left: -45px
+}
+
+.titulo-categoria{
+   color: #CCB1AA;
+   line-height: 1em;
+   padding-top: 10px;
+   height: 40px;
+   font-weight: bold;
+   font-size: 26px;
+   margin-left:10px;
+}
+
+.categoria{
+   line-height: 1em;
+   color: #CCB1AA;
+   font-size: 22px;
+   margin-left:30px;
+}
+
+.categoria:hover{
+   line-height: 1em;
+   color: #fff;
+   font-size: 22px;
+   margin-left:30px;
+   text-decoration: none;
 }

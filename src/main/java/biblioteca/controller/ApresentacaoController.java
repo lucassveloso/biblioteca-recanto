@@ -1,6 +1,8 @@
 package biblioteca.controller;
 
+import biblioteca.model.Categoria;
 import biblioteca.model.Obra;
+import biblioteca.service.CategoriaService;
 import biblioteca.service.ObraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,10 +17,13 @@ public class ApresentacaoController {
     @Autowired
     private ObraService servicoObra;
 
+    @Autowired
+    private CategoriaService servicoCategoria;
+
     @RequestMapping("/")
     public String home(Model model){
-        List<Obra> obras = (List) servicoObra.buscaTodos();
-        model.addAttribute("obras", obras.size());
+        model.addAttribute("obras", (List) servicoObra.buscaTodos());
+        model.addAttribute("categorias",(List) servicoCategoria.buscaTodos());
         return "home";
     }
 
