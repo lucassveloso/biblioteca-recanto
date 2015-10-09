@@ -142,13 +142,14 @@ background-image: url('../img/fundo.png');
    line-height: 1em;
    color: #CCB1AA;
    font-size: 22px;
-   margin-left:30px;
+   margin-left:35px;
 }
 
 .categoria:hover{
-   line-height: 1em;
    color: #fff;
-   font-size: 22px;
-   margin-left:30px;
    text-decoration: none;
+}
+
+.categoria-atual{
+background-image: url('../img/buscaMarcado.png');
 }

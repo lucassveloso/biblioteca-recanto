@@ -5,14 +5,16 @@
     <meta charset="UTF-8" />
     <title>Biblioteca Recanto da Lagoa</title>
 
-    <link th:replace="fragmentos/header :: bootstrap-css" />
-    <link th:replace="fragmentos/header :: jqueryui-css" />
-    <script th:replace="fragmentos/header :: jquery"/>
-    <script th:replace="fragmentos/header :: jqueryui"/>
-    <script th:replace="fragmentos/header :: bootstrap-js"/>
-    <script th:replace="fragmentos/header :: query-string-js"/>
-
-        <link rel="stylesheet" type="text/css" href="css/principal.css"/>
+    <link type="text/css" href="/webjars/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link type="text/css"  href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <script  type="text/javascript" src="/webjars/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/2.1.3/jquery.min.js"/>
+    <script type="text/javascript" src="/webjars/jquery-ui/1.11.4/jquery-ui.min.js"/>
+    <link rel="stylesheet" type="text/css" href="css/principal.css"/>
+    <script type="text/javascript" src="js/query-string.js"/>
+    <script type="text/javascript" src="js/busca.js"/>
+        <script type="text/javascript" src="js/categoria.js"/>
 
 </head>
 <body>
@@ -22,17 +24,20 @@
     <div class="header-quadro"></div>
     <div class="centro-quadro">
         <div>
-            <div class="logo"></div>
+            <a th:href="@{'/'}"><div class="logo"></div></a>
             <div class="busca">
-                <input type="text" class="input-text"/>
-                <button type="submit" class="icone-busca"/>
+
+                <input type="text" id="input-busca" class="input-text"/>
+                <button type="button" id="btn-busca" class="icone-busca"/>
             </div>
         </div>
         <div class="campo-categorias">
             <div class="header-categoria"></div>
             <div class="centro-categoria">
                 <p class="titulo-categoria">Categorias:</p>
-                <a th:each="categoria : ${categorias}" class="categoria" th:href="@{'/categoria/' + ${categoria.codigo}}" th:text="${categoria.nome}"/>
+                <div id="menu-categoria">
+                <a th:each="categoria : ${categorias}" class="categoria" th:value="${categoria.codigo}" th:href="@{'/?categoria=' + ${categoria.codigo}}" th:text="${categoria.nome}"/>
+                </div>
             </div>
             <div class="footer-categoria"></div>
         </div>

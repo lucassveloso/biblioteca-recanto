@@ -14,17 +14,4 @@ import java.util.List;
 @Controller
 public class ApresentacaoController {
 
-    @Autowired
-    private ObraService servicoObra;
-
-    @Autowired
-    private CategoriaService servicoCategoria;
-
-    @RequestMapping("/")
-    public String home(Model model){
-        model.addAttribute("obras", (List) servicoObra.buscaTodos());
-        model.addAttribute("categorias",(List) servicoCategoria.buscaTodos());
-        return "home";
-    }
-
 }

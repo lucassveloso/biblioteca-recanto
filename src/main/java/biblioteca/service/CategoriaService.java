@@ -18,4 +18,6 @@ public class CategoriaService {
         return repositorioCategoria.findAll();
     }
 
+    public Categoria buscaPorCodigo(int codigo){ return repositorioCategoria.findOne(codigo);}
+
 }
